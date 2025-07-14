@@ -31,11 +31,15 @@ int hash(char* chave) {
     return soma % TAM;
 }
 
-// Função de hash da senha (didática, simples)
+// Função de hash da senha (didática, simples) com salting
 void hash_senha(char* senha, char* hash_result) {
+    char salt[] = "abc123"; // exemplo de salt fixo
+    char senha_com_salt[150];
+    sprintf(senha_com_salt, "%s%s", senha, salt);
+
     int valor = 0;
-    for (int i = 0; senha[i] != '\0'; i++) {
-        valor += senha[i] * (i + 1);
+    for (int i = 0; senha_com_salt[i] != '\0'; i++) {
+        valor += senha_com_salt[i] * (i + 1);
     }
     sprintf(hash_result, "%x", valor); // resultado em hexadecimal
 }
@@ -47,7 +51,7 @@ void cadastrar(char* nome, char* senha) {
     Usuario* atual = tabela[indice];
     while (atual != NULL) {
         if (strcmp(atual->nome, nome) == 0) {
-            printf("⚠️  Usuário já existe!\n");
+            printf("Usuário já existe!\n");
             return;
         }
         atual = atual->prox;
@@ -59,7 +63,7 @@ void cadastrar(char* nome, char* senha) {
     novo->prox = tabela[indice];
     tabela[indice] = novo;
 
-    printf("✅ Usuário cadastrado com sucesso!\n");
+    printf("Usuário cadastrado com sucesso!\n");
 }
 
 // Autenticar usuário
@@ -115,11 +119,11 @@ void menu() {
                 scanf("%s", senha);
                 int res = autenticar(nome, senha);
                 if (res == 1)
-                    printf("✅ Login bem-sucedido!\n");
+                    printf("Login bem-sucedido!\n");
                 else if (res == 0)
-                    printf("❌ Senha incorreta.\n");
+                    printf("Senha incorreta.\n");
                 else
-                    printf("❌ Usuário não encontrado.\n");
+                    printf("Usuário não encontrado.\n");
                 break;
 
             case 3:
@@ -127,7 +131,7 @@ void menu() {
                 break;
 
             default:
-                printf("⚠️  Opção inválida!\n");
+                printf("Opção inválida!\n");
         }
 
     } while (opcao != 3);
