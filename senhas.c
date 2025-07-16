@@ -1,3 +1,4 @@
+// versão para testes e testar como irá funcionar a aplicação do codigo ultilizando hash e salt
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
