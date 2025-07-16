@@ -1,12 +1,27 @@
 # Mini Sistema de Autenticação de Senhas com Tabela Hash
 
-Este projeto demonstra um método de autenticação de usuários utilizando tabelas hash em C. O objetivo geral é mostrar como armazenar e verificar senhas de forma utilizando técnicas mais seguras com hash e salt.
+Este projeto foi desenvolvido para a segunda e terceira unidade da disciplina de algoritmos e estruturas de dados II, ministrada e orientada pelo professor Dtr. Kennedy Reurison Lopes.
+
+# Sumario
+1. [Introdução](#mini-sistema-de-autenticação-de-senhas-com-tabela-hash)
+2. [Discentes e Docente](#discentes)
+3. [Estrutura do Projeto](#estrutura-do-projeto)
+4. [Funcionamento](#funcionamento)
+    - [Cadastro e Autenticação](#cadastro-e-autenticação)
+    - [Diferenças entre as versões](#diferenças-entre-as-versões)
+5. [Requisitos](#requisitos)
+6. [Compilação](#compilação)
+7. [Execução](#execução)
+8. [Como Utilizar](#como-utilizar)
+9. [Desafios Encontrados](#desafios-encontrados)
+10. [Observações](#observações)
+11. [Licença](#licença)
 
 ### Discentes
-- GABRIEL GUIMARAES DAMIAO PINTO
-- MAYCON SOARES MAIA
-- PEDRO HENRIQUE PEREIRA DE SOUSA
-- SAVIO DE OLIVEIRA JERONIMO
+- GABRIEL GUIMARAES DAMIAO PINTO(Apresentador)
+- MAYCON SOARES MAIA(GitMaster)
+- PEDRO HENRIQUE PEREIRA DE SOUSA(Codificador)
+- SAVIO DE OLIVEIRA JERONIMO(Redator)
 
 ### Docente
 - KENNEDY REURISON LOPES
