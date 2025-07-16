@@ -1,11 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <stdio.h>      // biblioteca padrão
+#include <stdlib.h>     // biblioteca para manipulação de memória dinâmica
+#include <string.h>     // biblioteca para manipulação de strings
 #include <openssl/sha.h> // Requer libssl-dev
 #include <time.h>
 
 #define TAM 20
-// Estrutura do usuário 
+// struct do usuário 
 typedef struct Usuario {
     char nome[50];
     char senha_hash[SHA256_DIGEST_LENGTH*2+1]; // SHA-256 em hex
