@@ -1,16 +1,23 @@
-# Autenticação de Senhas com Tabela Hash
+# Mini Sistema de Autenticação de Senhas com Tabela Hash
 
-Este projeto demonstra dois métodos de autenticação de usuários utilizando tabelas hash em C. O objetivo é mostrar como armazenar e verificar senhas de forma simples e também utilizando técnicas mais seguras com hash e salt.
+Este projeto demonstra um método de autenticação de usuários utilizando tabelas hash em C. O objetivo geral é mostrar como armazenar e verificar senhas de forma utilizando técnicas mais seguras com hash e salt.
+
+### Discentes
+- GABRIEL GUIMARAES DAMIAO PINTO
+- MAYCON SOARES MAIA
+- PEDRO HENRIQUE PEREIRA DE SOUSA
+- SAVIO DE OLIVEIRA JERONIMO
+
+### Docente
+- KENNEDY REURISON LOPES
 
 ## Estrutura do Projeto
 
 - `senhas.c`: Implementação didática, usando um hash simples para as senhas.
 - `senhas1.c`: Implementação segura, usando SHA-256 e salt para proteger as senhas (requer OpenSSL).
 - `senhas1`: Binário gerado a partir de `senhas1.c`.
-- `output/senhas.exe`: Binário gerado (Windows).
-- `README.md`: Este arquivo.
 
-## Como funciona
+## Funcionamento:
 
 ### Cadastro e Autenticação
 
@@ -48,11 +55,30 @@ No terminal, execute o binário desejado:
 ./senhas1     # versão segura
 ```
 
+## Como utilizar
+
+1. Ao executar o programa, será exibido um menu com as opções:
+    - 1 - Cadastrar
+    - 2 - Autenticar
+    - 0 - Sair
+2. Para cadastrar, escolha a opção 1, informe o nome e a senha desejada.
+3. Para autenticar, escolha a opção 2, informe o nome e a senha cadastrados.
+4. O programa informará se o usuário foi autenticado, se a senha está incorreta ou se o usuário não existe.
+5. Para sair, escolha a opção 0.
+
+## Desafios Encontrados
+
+Durante o desenvolvimento, alguns problemas foram enfrentados:
+
+- **Implementação do salt**: O salt precisa ser aleatório e associado corretamente ao usuário para garantir a segurança do hash da senha.
+- **Uso do SHA-256**: Integrar a biblioteca OpenSSL para gerar o hash SHA-256  principalmente na manipulação dos dados binários e conversão para hexadecimal.
+- **Validação e comparação de senhas**: Foi necessário garantir que a combinação senha + salt fosse corretamente processada e comparada, evitando erros de autenticação.
+- **Gerenciamento da tabela hash**: Implementar a estrutura de dados para armazenar múltiplos usuários e lidar com colisões exigiu atenção especial para garantir buscas rápidas e corretas.
+
 ## Observações
 
 - O projeto é apenas para fins educacionais.
-- Não utilize o método simples para aplicações reais.
-- O método com SHA-256 e salt é mais seguro, mas para produção recomenda-se usar funções específicas para senhas (ex: bcrypt, Argon2).
+- O método implementado com SHA-256 e salt é mais seguro, mas para produção recomenda-se usar funções específicas para senhas (ex: bcrypt, Argon2).
 
 ## Licença
 
